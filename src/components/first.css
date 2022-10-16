@@ -5,6 +5,30 @@
     margin-top: 40px;
     margin-left: 130px;
 }
+.winner{
+    margin-top: 25px;
+    margin-left: 120px;
+}
 .candidate{
     margin-left: -65%;
 }
+.result{
+    margin-left: 35%;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  
+  .thr {
+    height:min-content;
+    background-color: #4287f5;
+    color: white;
+  }
+  
+  th,
+  td {
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+  }

@@ -13,12 +13,20 @@ const YOUR_CONTRACT_ADDRESS = "0xc6ac99d26e196E94f0f8eCC814Aa7086031b46d4";
 function Second() {
   
   const [userID,setUserID]=useState("");
+ 
   const [ca,setCa]=useState([]);
   const [cb,setCb]=useState([]);
   const [cc,setCc]=useState([]);
   const [cd,setCd]=useState([]);
   const [ce,setCe]=useState([]);
   const [cf,setCf]=useState([]);
+  const [candidateIDG,setCandidateIDG]=useState("");
+  const [candidateIDC,setCandidateIDC]=useState("");
+  const [candidateIDS,setCandidateIDS]=useState("");
+  const [candidateIDT,setCandidateIDT]=useState("");
+  const [candidateIDH,setCandidateIDH]=useState("");
+  const [candidateIDST,setCandidateIDST]=useState("");
+
   useEffect(() => {
     connectwallet();
   }, []);
@@ -82,6 +90,49 @@ function Second() {
     stuCandidate()
   },[]);
 
+  
+
+  // useEffect(() => {
+  //   console.log(ca,"Gymkhana Candidate")
+  //   setCandidateIDG(ca[0])
+  //   setCandidateIDC(cb[0])
+  //   setCandidateIDS(cc[0])
+  //   setCandidateIDT(cd[0])
+  //   setCandidateIDH(ce[0])
+  //   setCandidateIDST(cf[0])
+  // },[])
+
+ const voteGymkhana = async () => {
+  alert(candidateIDG);
+  await getContract().voteGymkhana(candidateIDG,userID);
+  alert("done");
+ }
+ const voteCultural = async () => {
+  alert(candidateIDC);
+  await getContract().voteCultural(candidateIDC,userID);
+  alert("done");
+ }
+ const voteSports = async () => {
+  alert(candidateIDS);
+  await getContract().voteSports(candidateIDS,userID);
+  alert("done");
+ }
+ const voteTechnical = async () => {
+  alert(candidateIDT);
+  await getContract().voteTechnical(candidateIDT,userID);
+  alert("done");
+ }
+ const voteHostel = async () => {
+  alert(candidateIDH);
+  await getContract().voteHostel(candidateIDH,userID);
+  alert("done");
+ }
+ const voteStudent = async () => {
+  alert(candidateIDST);
+  await getContract().voteStudent(candidateIDST,userID);
+  alert("done");
+ }
+
   return (
     <>
         <div>
@@ -98,34 +149,34 @@ function Second() {
             <tr>
               <td>GymkhanaCouncil</td>
               <td>
-              <select>
+              <select onChange = {(e) => setCandidateIDG(e.target.value)}>
                       {ca.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeHolder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" type="submit">Vote</button>
+              <button className="votebutton" onClick={voteGymkhana}>Vote</button>
               </td>
              </tr>
 
              <tr>
               <td>CulturalBoard</td>
               <td>
-              <select>
+              <select onChange = {(e) => setCandidateIDC(e.target.value)}>
                       {cb.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeHolder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" type="submit">Vote</button>
+              <button className="votebutton" onClick={voteCultural}>Vote</button>
               </td>
              </tr>
 
@@ -133,17 +184,17 @@ function Second() {
              <tr>
               <td>SportsBoard</td>
               <td>
-              <select>
+              <select onChange = {(e) => setCandidateIDS(e.target.value)}>
                       {cc.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeHolder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" type="submit">Vote</button>
+              <button className="votebutton" onClick={voteSports}>Vote</button>
               </td>
              </tr>
 
@@ -151,17 +202,17 @@ function Second() {
              <tr>
               <td>TechnicalBoard</td>
               <td>
-              <select>
+              <select onChange = {(e) => setCandidateIDT(e.target.value)}>
                       {cd.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeHolder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" type="submit">Vote</button>
+              <button className="votebutton" onClick={voteTechnical}>Vote</button>
               </td>
              </tr>
 
@@ -169,17 +220,17 @@ function Second() {
              <tr>
               <td>HostelAffairsBoard</td>
               <td>
-              <select>
+              <select onChange = {(e) => setCandidateIDH(e.target.value)}>
                       {ce.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeHolder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" type="submit">Vote</button>
+              <button className="votebutton" onClick={voteHostel}>Vote</button>
               </td>
              </tr>
 
@@ -187,17 +238,17 @@ function Second() {
              <tr>
               <td>StudentWelfareBoard</td>
               <td>
-              <select>
+              <select onChange = {(e) => setCandidateIDST(e.target.value)}>
                       {cf.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeHolder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" type="submit">Vote</button>
+              <button className="votebutton" onClick={voteStudent}>Vote</button>
               </td>
              </tr>
 
@@ -210,39 +261,3 @@ function Second() {
 }
 export default Second;
 
-// return(
-//     <>
-//     <div>
-//         <div><Link to="/" className='s'><button >Home</button></Link></div>
-//         <div className="sheader"><Header/></div>
-//     </div>
-//     <div>
-//     <table>
-//         <tr className="thr">
-//          <td><b>Posts</b></td>
-//          <td><b>Candidate Id</b></td>
-//          <td><b>VoterId</b></td>
-//         </tr>
-//         <tr>
-//          1
-//         </tr>
-//         <tr>
-//          2
-//        </tr>
-//        <tr>
-//         3
-//       </tr>
-//       <tr>
-//         4
-//       </tr>
-//       <tr>
-//         5
-//       </tr>
-//       <tr>
-//         6
-//       </tr>
-
-//     </table>
-//     </div>
-//     </>
-// );

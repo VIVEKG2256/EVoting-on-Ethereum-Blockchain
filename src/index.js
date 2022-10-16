@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import First from './components/First';
-import Second from './components/Second'
+import Second from './components/Second';
+import Result from './components/Result';
 
 import reportWebVitals from './reportWebVitals';
 import {
@@ -19,6 +20,7 @@ root.render(
     <Routes>
       <Route exact path="/" element={<First/>}/>
       <Route exact path="/vote" element={<Second/>}/>
+      <Route exact path="/result" element={<Result/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

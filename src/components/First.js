@@ -187,8 +187,14 @@ function First(){
         <div className="letsvote">
         <Link to="/vote" className='s'><button >Let's Vote</button></Link>
         </div>
+        <div className="winner">
+        <Link to="/result" className='s'><button >Election Result</button></Link>
+        </div>
+
        </div>
-        
+        <div>
+        </div>
+        <br></br>
         </>
     );
 }

@@ -1,0 +1,3 @@
+chages in smart contract:
+1. start and end time should be fetched
+2. result shoould not be fetched untill counting is done
