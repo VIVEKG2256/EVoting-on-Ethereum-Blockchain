@@ -2,8 +2,11 @@ import Header from "./Header";
 import {Link} from  'react-router-dom';
 import './first.css';
 import './second.css';
+import './result.css';
+import './button.css';
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
+import { Button } from '@material-ui/core';
 
 const contractABI = require("./abi.json");
 const YOUR_CONTRACT_ADDRESS = "0xc6ac99d26e196E94f0f8eCC814Aa7086031b46d4";
@@ -91,9 +94,10 @@ function Result () {
      },[]);
     
     return(
+        <div className="resultParentDiv">
         <>
          <div>
-            <div><Link to="/" className='s'><button >Home</button></Link></div>
+            <div className='homebuttonDiv'><Link to="/" ><button className="hbutton">Home</button></Link></div>
             <div className="sheader"><Header/></div>
         </div>
         <br></br>
@@ -104,25 +108,30 @@ function Result () {
              <td><b>Winner Id</b></td>
             </tr>
             <tr>
-                <td>GymkhanaCouncil</td>
+                <td>Gymkhana Council</td>
                 <td>{gymkhana}</td>
             </tr>
+            <br/>
             <tr>
-                <td>CulturalBoard</td>
+                <td>Cultural Board</td>
                 <td>{cultural}</td>
             </tr>
+            <br/>
             <tr>
-                <td>SportsBoard</td>
+                <td>Sports Board</td>
                 <td>{sports}</td>
             </tr>
+            <br/>
             <tr>
-                <td>TechnicalBoard</td>
+                <td>Technical Board</td>
                 <td>{technical}</td>
             </tr>
+            <br/>
             <tr>
-                <td>HostelAffairsBoard</td>
+                <td>HostelAffairs Board</td>
                 <td>{hostel}</td>
             </tr>
+            <br/>
             <tr>
                 <td>StudentWelfareBoard</td>
                 <td>{student}</td>
@@ -130,6 +139,8 @@ function Result () {
          </table>
        </div>
         </>
+        
+        </div>
     );
 }
 export default Result;

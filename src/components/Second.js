@@ -1,6 +1,9 @@
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import "./second.css";
+import "./button.css";
+import "./inputfield.css";
+
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { wait } from "@testing-library/user-event/dist/utils";
@@ -134,12 +137,13 @@ function Second() {
  }
 
   return (
-    <>
+    <div className="pParentDiv">
         <div>
-            <div><Link to="/" className='s'><button >Home</button></Link></div>
+            <div className='homebuttonDiv'><Link to="/"><button className="hbutton">Home</button></Link></div>
             <div className="sheader"><Header/></div>
         </div>
-        <div>
+        <br></br>
+        <div className="parentDiv">
         <table>
             <tr className="thr">
              <td><b>Posts</b></td>
@@ -147,90 +151,90 @@ function Second() {
              <td><b>VoterId</b></td>
             </tr>
             <tr>
-              <td>GymkhanaCouncil</td>
+              <td>Gymkhana Council</td>
               <td>
-              <select onChange = {(e) => setCandidateIDG(e.target.value)}>
+              <select className="p" onChange = {(e) => setCandidateIDG(e.target.value)}>
                       {ca.map((candidates) => (
-                          <option value={candidates}>{candidates}</option>
+                          <option  value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input className="p" placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" onClick={voteGymkhana}>Vote</button>
+              <button className="pr" onClick={voteGymkhana}>Vote</button>
               </td>
              </tr>
 
              <tr>
-              <td>CulturalBoard</td>
+              <td>Cultural Board</td>
               <td>
-              <select onChange = {(e) => setCandidateIDC(e.target.value)}>
+              <select className="p" onChange = {(e) => setCandidateIDC(e.target.value)}>
                       {cb.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input className="p" placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" onClick={voteCultural}>Vote</button>
+              <button className="pr" onClick={voteCultural}>Vote</button>
               </td>
              </tr>
 
 
              <tr>
-              <td>SportsBoard</td>
+              <td>Sports Board</td>
               <td>
-              <select onChange = {(e) => setCandidateIDS(e.target.value)}>
+              <select className="p" onChange = {(e) => setCandidateIDS(e.target.value)}>
                       {cc.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input className="p" placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" onClick={voteSports}>Vote</button>
+              <button className="pr" onClick={voteSports}>Vote</button>
               </td>
              </tr>
 
 
              <tr>
-              <td>TechnicalBoard</td>
+              <td>Technical Board</td>
               <td>
-              <select onChange = {(e) => setCandidateIDT(e.target.value)}>
+              <select className="p" onChange = {(e) => setCandidateIDT(e.target.value)}>
                       {cd.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input className="p" placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" onClick={voteTechnical}>Vote</button>
+              <button className="pr" onClick={voteTechnical}>Vote</button>
               </td>
              </tr>
 
 
              <tr>
-              <td>HostelAffairsBoard</td>
+              <td>HostelAffairs Board</td>
               <td>
-              <select onChange = {(e) => setCandidateIDH(e.target.value)}>
+              <select className="p" onChange = {(e) => setCandidateIDH(e.target.value)}>
                       {ce.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input className="p" placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" onClick={voteHostel}>Vote</button>
+              <button className="pr" onClick={voteHostel}>Vote</button>
               </td>
              </tr>
 
@@ -238,23 +242,25 @@ function Second() {
              <tr>
               <td>StudentWelfareBoard</td>
               <td>
-              <select onChange = {(e) => setCandidateIDST(e.target.value)}>
+              <select className="p" onChange = {(e) => setCandidateIDST(e.target.value)}>
                       {cf.map((candidates) => (
                           <option value={candidates}>{candidates}</option>
                       ))}
                 </select>
               </td>
               <td>
-              <input placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
+              <input className="p" placeholder="VoterID" value={userID} onChange={(e) => setUserID(e.target.value)} />
               </td>
               <td>
-              <button className="votebutton" onClick={voteStudent}>Vote</button>
+              <button className="pr"  onClick={voteStudent}>Vote</button>
               </td>
              </tr>
-
             </table> 
+            <div className="winner1">
+            <Link to="/result" className='s'><button  className="rbutton" >Election Result</button></Link>
+            </div>
         </div>
-    </>
+    </div>
   
   
   );

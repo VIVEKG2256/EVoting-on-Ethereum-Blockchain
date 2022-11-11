@@ -18,7 +18,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route exact path="/" element={<First/>}/>
+      <Route exact path="/" element={<App/>}/>
       <Route exact path="/vote" element={<Second/>}/>
       <Route exact path="/result" element={<Result/>}/>
     </Routes>

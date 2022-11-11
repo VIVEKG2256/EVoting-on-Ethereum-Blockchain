@@ -23,15 +23,24 @@
     padding-left: 300px;
   }
   
-  .votebutton{
+  /* .votebutton{
     margin-left: 40%;
-  }
+  } */
   .label{
     margin-right: 140px;
     margin-left: 40px;
   }
+
+ 
   
   .sheader{
-    margin-top: -20px;
+    /* margin-top: -20px; */
     margin-left: 30%;
+  }
+  .winner1{
+    margin-left: 30%;
+  }
+  .parentDiv{
+    margin-left: 200px;
+    margin-top: -40px;
   }

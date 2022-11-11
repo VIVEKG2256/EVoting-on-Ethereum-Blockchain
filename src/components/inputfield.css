@@ -1,0 +1,22 @@
+.p{
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  .pq{
+    width: 200px;
+    padding-top: 12px;
+    padding-bottom: 11px;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+  }
+  .pr{
+    background-color: #4287f5;
+    width: 100px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-align: center;
+    border: none;
+  }

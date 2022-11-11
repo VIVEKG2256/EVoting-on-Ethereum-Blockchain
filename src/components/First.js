@@ -1,6 +1,7 @@
 import Header from "./Header";
 import {Link} from  'react-router-dom';
 import './first.css';
+import './inputfield.css';
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import emailjs from "emailjs-com";
@@ -114,23 +115,24 @@ function First(){
     }
 
     return(
+        <div className="pParentDivFirst">
         <>
        <div className="first">
        <div ><Header/></div>
          <div><h3>Create Voter</h3>
-         <div>
+         <div className="createVoter">
          
-            <input placeholder="UserId" onChange = {(e) => setUserID(e.target.value)} value = {userID} ></input>
-            <button onClick={createVoter} >Create Voter</button>
+            <input className="p" placeholder="UserId" onChange = {(e) => setUserID(e.target.value)} value = {userID} ></input>
+            <button className="p" onClick={createVoter} >Create Voter</button>
         
          </div>
          </div>
 
-        <div> <h3>Set Election StartTime </h3>
-        <div>
-            <input placeholder="StartTime" onChange = {(e) => setStartTime(e.target.value)} value = {startTime} ></input>
-            <input placeholder="EndTime" onChange = {(e) => setEndTime(e.target.value)} value = {endTime} ></input>
-            <button onClick={start}>SetTime</button>
+        <div > <h3>Set Election Time </h3>
+        <div className="setElectionTime">
+            <input className="p" placeholder="StartTime" onChange = {(e) => setStartTime(e.target.value)} value = {startTime} ></input>
+            <input className="p" placeholder="EndTime" onChange = {(e) => setEndTime(e.target.value)} value = {endTime} ></input>
+            <button className="p" onClick={start}>SetTime</button>
          </div>
         </div>
          
@@ -139,56 +141,56 @@ function First(){
             <h3>Create Election Candidate </h3>
          <div className="candidate">
           <div>
-                <input placeholder="Gymkhana" onChange = {(e) => setGymkhana(e.target.value)} value = {gymkhana} ></input>
-                <input placeholder="Name" onChange = {(e) => setNameG(e.target.value)} value={nameG}></input>
-                <input placeholder="AGE" onChange = {(e) => setAgeG(e.target.value)} value={ageG}></input>
-                <input placeholder="CGPA" onChange ={(e) => setCgpaG(e.target.value)} value={cgpaG}></input>
-                <button onClick={createGymkhanaCandidate}>CreateGymkhanaCandidate</button>
+                <input className="p" placeholder="Gymkhana" onChange = {(e) => setGymkhana(e.target.value)} value = {gymkhana} ></input>
+                <input className="p" placeholder="Name" onChange = {(e) => setNameG(e.target.value)} value={nameG}></input>
+                <input className="p" placeholder="AGE" onChange = {(e) => setAgeG(e.target.value)} value={ageG}></input>
+                <input className="p" placeholder="CGPA" onChange ={(e) => setCgpaG(e.target.value)} value={cgpaG}></input>
+                <button className="pq" onClick={createGymkhanaCandidate}>CreateGymkhanaCandidate</button>
             </div>
             <div>
-                <input placeholder="Cultural" onChange = {(e) => setCultural(e.target.value)} value = {cultural} ></input>
-                <input placeholder="Name" onChange = {(e) => setNameC(e.target.value)} value={nameC}></input>
-                <input placeholder="AGE" onChange = {(e) => setAgeC(e.target.value)} value={ageC}></input>
-                <input placeholder="CGPA" onChange ={(e) => setCgpaC(e.target.value)} value={cgpaC}></input>
-                <button onClick={createCulturalCandidate}>CreateCulturalCandidate</button>
+                <input className="p" placeholder="Cultural" onChange = {(e) => setCultural(e.target.value)} value = {cultural} ></input>
+                <input className="p" placeholder="Name" onChange = {(e) => setNameC(e.target.value)} value={nameC}></input>
+                <input className="p" placeholder="AGE" onChange = {(e) => setAgeC(e.target.value)} value={ageC}></input>
+                <input className="p" placeholder="CGPA" onChange ={(e) => setCgpaC(e.target.value)} value={cgpaC}></input>
+                <button className="pq" onClick={createCulturalCandidate}>CreateCulturalCandidate</button>
             </div>
             <div>
-                <input placeholder="Sports" onChange = {(e) => setSports(e.target.value)} value = {sports} ></input>
-                <input placeholder="Name" onChange = {(e) => setNameS(e.target.value)} value={nameS}></input>
-                <input placeholder="AGE" onChange = {(e) => setAgeS(e.target.value)} value={ageS}></input>
-                <input placeholder="CGPA" onChange ={(e) => setCgpaS(e.target.value)} value={cgpaS}></input>
-                <button onClick={createSportsCandidate}>CreateSportCandidate</button>
+                <input className="p" placeholder="Sports" onChange = {(e) => setSports(e.target.value)} value = {sports} ></input>
+                <input className="p" placeholder="Name" onChange = {(e) => setNameS(e.target.value)} value={nameS}></input>
+                <input className="p" placeholder="AGE" onChange = {(e) => setAgeS(e.target.value)} value={ageS}></input>
+                <input className="p" placeholder="CGPA" onChange ={(e) => setCgpaS(e.target.value)} value={cgpaS}></input>
+                <button className="pq" onClick={createSportsCandidate}>CreateSportCandidate</button>
             </div>
             <div>
-                <input placeholder="Technical" onChange = {(e) => setTechnical(e.target.value)} value = {technical} ></input>
-                <input placeholder="Name" onChange = {(e) => setNameT(e.target.value)} value={nameT}></input>
-                <input placeholder="AGE" onChange = {(e) => setAgeT(e.target.value)} value={ageT}></input>
-                <input placeholder="CGPA" onChange ={(e) => setCgpaT(e.target.value)} value={cgpaT}></input>
-                <button onClick={createTechnicalCandidate}>CreateTechnicalCandidate</button>
+                <input className="p" placeholder="Technical" onChange = {(e) => setTechnical(e.target.value)} value = {technical} ></input>
+                <input className="p" placeholder="Name" onChange = {(e) => setNameT(e.target.value)} value={nameT}></input>
+                <input className="p" placeholder="AGE" onChange = {(e) => setAgeT(e.target.value)} value={ageT}></input>
+                <input className="p" placeholder="CGPA" onChange ={(e) => setCgpaT(e.target.value)} value={cgpaT}></input>
+                <button className="pq" onClick={createTechnicalCandidate}>CreateTechnicalCandidate</button>
             </div>
             <div>
-                <input placeholder="Hostel" onChange = {(e) => setHostel(e.target.value)} value = {hostel} ></input>
-                <input placeholder="Name" onChange = {(e) => setNameH(e.target.value)} value={nameH}></input>
-                <input placeholder="AGE" onChange = {(e) => setAgeH(e.target.value)} value={ageH}></input>
-                <input placeholder="CGPA" onChange ={(e) => setCgpaH(e.target.value)} value={cgpaH}></input>
-                <button onClick={createHostelCandidate}>CreateHostelCandidate</button>
+                <input className="p" placeholder="Hostel" onChange = {(e) => setHostel(e.target.value)} value = {hostel} ></input>
+                <input className="p" placeholder="Name" onChange = {(e) => setNameH(e.target.value)} value={nameH}></input>
+                <input className="p" placeholder="AGE" onChange = {(e) => setAgeH(e.target.value)} value={ageH}></input>
+                <input className="p" placeholder="CGPA" onChange ={(e) => setCgpaH(e.target.value)} value={cgpaH}></input>
+                <button className="pq" onClick={createHostelCandidate}>CreateHostelCandidate</button>
             </div>
             <div>
-                <input placeholder="Student" onChange = {(e) => setStudent(e.target.value)} value = {student} ></input>
-                <input placeholder="Name" onChange = {(e) => setNameSt(e.target.value)} value={nameSt}></input>
-                <input placeholder="AGE" onChange = {(e) => setAgeSt(e.target.value)} value={ageSt}></input>
-                <input placeholder="CGPA" onChange ={(e) => setCgpaSt(e.target.value)} value={cgpaSt}></input>
-                <button onClick={createStudentCandidate}>CreateStudentCandidate</button>
+                <input className="p" placeholder="Student" onChange = {(e) => setStudent(e.target.value)} value = {student} ></input>
+                <input className="p" placeholder="Name" onChange = {(e) => setNameSt(e.target.value)} value={nameSt}></input>
+                <input className="p" placeholder="AGE" onChange = {(e) => setAgeSt(e.target.value)} value={ageSt}></input>
+                <input className="p" placeholder="CGPA" onChange ={(e) => setCgpaSt(e.target.value)} value={cgpaSt}></input>
+                <button className="pq" onClick={createStudentCandidate}>CreateStudentCandidate</button>
             </div>
          </div>
 
          </div>
 
         <div className="letsvote">
-        <Link to="/vote" className='s'><button >Let's Vote</button></Link>
+        <Link to="/vote" className='s'><button className="vbutton" >Let's Vote</button></Link>
         </div>
         <div className="winner">
-        <Link to="/result" className='s'><button >Election Result</button></Link>
+        <Link to="/result" className='s'><button className="rbutton">Election Result</button></Link>
         </div>
 
        </div>
@@ -196,6 +198,7 @@ function First(){
         </div>
         <br></br>
         </>
+        </div>
     );
 }
 export default First;

@@ -1,20 +1,21 @@
 .first{
+   margin-top: -25px;
     margin-left: 35%;
+
 }
 .letsvote{
     margin-top: 40px;
-    margin-left: 130px;
 }
 .winner{
-    margin-top: 25px;
-    margin-left: 120px;
+    margin-top: -38px;
+    margin-left: 150px;
 }
 .candidate{
     margin-left: -65%;
 }
-.result{
+/* .result{
     margin-left: 35%;
-}
+} */
 table {
     border-collapse: separate;
     border-spacing: 0 10px;
@@ -32,3 +33,9 @@ table {
     text-align: center;
     padding: 10px;
   }
+.createVoter{
+  margin-left: -70px;
+}
+.setElectionTime{
+  margin-left: -99px;
+}
